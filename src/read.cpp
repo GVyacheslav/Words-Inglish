@@ -1,3 +1,4 @@
+#include "comparsion.h"
 #include <cstdlib>
 #include <fstream>
 #include <iostream>
@@ -5,11 +6,15 @@
 
 using namespace std;
 
-int check_read() {
+bool check_read() {
+
+  ifstream Translate("translate");
   ifstream Wordbook("words");
-  if (!Wordbook)
+
+  if (!Wordbook && !Translate)
     cout << "Ошибка! Файл не найден";
-  return 0;
+
+  return true;
 }
 
 int print_file() {
