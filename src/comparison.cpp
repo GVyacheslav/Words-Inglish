@@ -5,14 +5,14 @@
 using namespace std;
 
 int input_translate() {
-  string Strtranslate, Input, output;
+  string Strtranslate, Input, ;
   ifstream Wordbook("words");
 
   while (getline(Wordbook, Strtranslate)) {
     cout << Strtranslate;
     cout << " - ";
     cin << Input;
-    if (Strtranslate == output) {
+    if (Strtranslate == Input) {
       cout << "Верно\n";
 
     } else {
