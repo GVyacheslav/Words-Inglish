@@ -26,3 +26,13 @@ void print_file_rus() {
 
   Translate.close();
 }
+
+void print_file_eng() {
+  string Strfile;
+  ifstream Wordbook("words");
+
+  while (getline(Wordbook, Strfile))
+    cout << Strfile << endl;
+
+  Wordbook.close();
+}
