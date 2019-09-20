@@ -11,8 +11,26 @@ int input_translate() {
   while (getline(Wordbook, Strtranslate)) {
     cout << Strtranslate;
     cout << " - ";
-    output = input_data(Input);
+    cin << Input;
     if (Strtranslate == output) {
+      cout << "Верно\n";
+
+    } else {
+      cout << "Не правильно\n";
+    }
+  }
+  return 0;
+}
+
+int input_words_eng() {
+  string Input, Strwordseng;
+  ifstream Translate("translate");
+
+  while (getline(Translate, Strwordseng)) {
+    cout << Strwordseng;
+    cout << " - ";
+    cin << Input;
+    if (Strwordseng == Input) {
       cout << "Верно\n";
 
     } else {
