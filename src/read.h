@@ -2,6 +2,7 @@
 #define READ_H
 
 bool check_read();
-int print_file();
+void print_file_rus();
+void print_file_eng();
 
 #endif
