@@ -4,16 +4,33 @@
 
 using namespace std;
 
-int read_str() {
+int input_translate() {
+  string Strtranslate, Input, ;
+  ifstream Wordbook("words");
 
-  string Input, Temp, Strfile;
+  while (getline(Wordbook, Strtranslate)) {
+    cout << Strtranslate;
+    cout << " - ";
+    cin << Input;
+    if (Strtranslate == Input) {
+      cout << "Верно\n";
 
+    } else {
+      cout << "Не правильно\n";
+    }
+  }
+  return 0;
+}
+
+int input_words_eng() {
+  string Input, Strwordseng;
   ifstream Translate("translate");
 
-  while (getline(Translate, Strfile)) {
-    cout << "Введите слово: ";
-    cin >> Input;
-    if (Strfile == Input) {
+  while (getline(Translate, Strwordseng)) {
+    cout << Strwordseng;
+    cout << " - ";
+    cin << Input;
+    if (Strwordseng == Input) {
       cout << "Верно\n";
 
     } else {
