@@ -17,14 +17,22 @@ bool check_read() {
   return true;
 }
 
-int print_file() {
+void print_file_rus() {
+  string Strfile;
+  ifstream Translate("translate");
+
+  while (getline(Translate, Strfile))
+    cout << Strfile << endl;
+
+  Translate.close();
+}
+
+void print_file_eng() {
+  string Strfile;
   ifstream Wordbook("words");
 
-  while (!Wordbook.eof())
-    cout.put(Wordbook.get());
+  while (getline(Wordbook, Strfile))
+    cout << Strfile << endl;
 
   Wordbook.close();
-  cout << endl;
-
-  return 0;
 }
