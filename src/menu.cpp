@@ -16,30 +16,32 @@ void menu() {
   cout << "4) Упражнение для запоминания на русском языке\n";
   cout << "5) Выход из программы\n";
   cin >> step;
+  if (check_read() == true) {
+    switch (step) {
 
-  check_read();
+    case 1:
+      print_file_eng();
+      break;
 
-  switch (step) {
-  case 1:
-    print_file_eng();
-    break;
+    case 2:
+      print_file_rus();
+      break;
 
-  case 2:
-    print_file_rus();
-    break;
+    case 3:
+      cout << "Введите перевод с русского на английский язык" << endl;
+      input_words_eng();
+      break;
 
-  case 3:
-    cout << "Введите перевод с русского на английский язык" << endl;
-    input_words_eng();
-    break;
+    case 4:
+      cout << "Введите перевод с английского на русский язык" << endl;
+      input_translate();
+      break;
 
-  case 4:
-    cout << "Введите перевод с английского на русский язык" << endl;
-    input_translate();
-    break;
-
-  case 5:
-    exit(1);
-    break;
+    case 5:
+      exit(1);
+      break;
+    }
+  } else {
+    cout << "Не удалось считать файл!";
   }
 }
