@@ -18,21 +18,21 @@ bool check_read() {
 }
 
 void print_file_rus() {
-  string Strfile;
+  string Tempstr;
   ifstream Translate("translate");
 
-  while (getline(Translate, Strfile))
-    cout << Strfile << endl;
+  while (getline(Translate, Tempstr))
+    cout << Tempstr << endl;
 
   Translate.close();
 }
 
 void print_file_eng() {
-  string Strfile;
+  string Tempstr;
   ifstream Wordbook("words");
 
-  while (getline(Wordbook, Strfile))
-    cout << Strfile << endl;
+  while (getline(Wordbook, Tempstr))
+    cout << Tempstr << endl;
 
   Wordbook.close();
 }
