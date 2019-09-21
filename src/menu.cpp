@@ -1,7 +1,9 @@
 #include "comparsion.h"
+#include "dictionary.h"
 #include "read.h"
 #include <fstream>
 #include <iostream>
+#include <map>
 #include <string>
 
 using namespace std;
@@ -9,47 +11,43 @@ using namespace std;
 void menu() {
   int step = 0;
   while (true) {
+
     cout << "Выберите действие\n";
-    cout << "1) Вывести сборник слов на английском языке\n";
-    cout << "2) Вывести сборник слов на русском языке\n";
-    cout << "3) Упражнение для запоминания на английском языке\n";
-    cout << "4) Упражнение для запоминания на русском языке\n";
-    cout << "5) Выход из программы\n";
+    cout << "1) Вывести словарь целиком\n";
+    cout << "2) Упражнение для запоминания на английском языке\n";
+    cout << "3) Упражнение для запоминания на русском языке\n";
     cin >> step;
-    if (check_read() == true) {
-      switch (step) {
 
-      case 1:
-        system("clear");
-        print_file_eng();
-        break;
+    switch (step) {
 
-      case 2:
-        system("clear");
-        print_file_rus();
-        break;
+    case 1:
+      system("clear");
+      if (check_read() == true) {
+        Dictionary();
+      } else {
+        cout << "Ошибка! Файл не найден!";
+      }
+      break;
 
-      case 3:
-        system("clear");
+    case 2:
+      system("clear");
+      if (check_read() == true) {
         cout << "Введите перевод с русского на английский язык" << endl;
         input_words_eng();
-        break;
+      } else {
+        cout << "Ошибка! Файл не найден!";
+      }
+      break;
 
-      case 4:
-        system("clear");
+    case 3:
+      system("clear");
+      if (check_read() == true) {
         cout << "Введите перевод с английского на русский язык" << endl;
         input_translate();
-        break;
-
-      case 5:
-        system("clear");
-        break;
-      default:
-        system("clear");
-        continue;
+      } else {
+        cout << "Ошибка! Файл не найден!";
       }
-    } else {
-      cout << "Не удалось считать файл!";
+      break;
     }
   }
 }

@@ -1,4 +1,5 @@
 #include "comparsion.h"
+#include "dictionary.h"
 #include "menu.h"
 #include "read.h"
 #include <fstream>
@@ -10,7 +11,5 @@ using namespace std;
 int main() {
   setlocale(0, "");
   system("clear");
-  while (1) {
-    menu();
-  }
+  menu();
 }
