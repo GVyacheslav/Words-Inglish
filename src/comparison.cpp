@@ -6,14 +6,17 @@ using namespace std;
 
 int input_words_eng() {
 
-  string Input, Tempstr;
+  string Input, Tempstr, Temps;
+  int Result;
   ifstream Translate("translate");
+  ifstream Wordbook("words");
 
-  while (getline(Translate, Tempstr)) {
+  while (getline(Translate, Tempstr) && getline(Wordbook, Temps)) {
     cout << Tempstr << "-";
     cin >> Input;
 
-    if (Tempstr.compare(Input) == 1) {
+    Result = Temps.compare(Input);
+    if (Result == 0) {
       cout << "Верно\n";
 
     } else {
@@ -25,14 +28,16 @@ int input_words_eng() {
 
 int input_translate() {
 
-  string Tempstr, Input;
+  string Tempstr, Input, Temps;
+  int Result;
   ifstream Wordbook("words");
+  ifstream Translate("translate");
 
-  while (getline(Wordbook, Tempstr)) {
-    cout << Tempstr << "-";
+  while (getline(Translate, Tempstr) && getline(Wordbook, Temps)) {
+    cout << Temps << "-";
     cin >> Input;
-
-    if (Tempstr.compare(Input) == 1) {
+    Result = Tempstr.compare(Input);
+    if (Result == 0) {
       cout << "Верно\n";
 
     } else {
