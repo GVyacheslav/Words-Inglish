@@ -2,9 +2,12 @@ dist: xenial
 sudo: false
 language: cpp
 os: linux
-compiler:
-- c++11-compat
-- clang
+addons:
+apt:
+sources:
+- ubuntu-toolchain-r-test
+packages:
+- g++-7
 
 script:
 - make
