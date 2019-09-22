@@ -1,10 +1,10 @@
 #include "comparsion.h"
 #include "dictionary.h"
 #include "read.h"
+#include <cstdlib>
 #include <fstream>
 #include <iostream>
 #include <map>
-#include <string>
 
 using namespace std;
 
@@ -15,10 +15,10 @@ void text_menu() {
   cout << "3) Упражнение для запоминания на русском языке\n";
 }
 
-void menu() {
+void menu(ifstream &Translate, ifstream &Words) {
   int step = 0, temp = 0;
 
-  if (check_read() == true) {
+  if (check_read(Translate, Words) == true) {
     while (true) {
       text_menu();
 
@@ -45,14 +45,14 @@ void menu() {
       case 2:
         system("clear");
         cout << "Введите перевод с русского на английский язык\n" << endl;
-        input_words_eng();
+        input_words_eng(Translate, Words);
         break;
         system("clear");
 
       case 3:
         system("clear");
         cout << "Введите перевод с английского на русский язык\n" << endl;
-        input_translate();
+        input_translate(Translate, Words);
         break;
         system("clear");
       }

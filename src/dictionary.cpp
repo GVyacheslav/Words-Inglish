@@ -13,8 +13,8 @@ void Dictionary() {
   string English, Russian;
   map<string, string> size;
 
-  ifstream Eng("words");
-  ifstream Rus("translate");
+  ifstream Eng("../bin/words");
+  ifstream Rus("../bin/translate");
 
   while (getline(Eng, English) && getline(Rus, Russian))
     size.insert(pair<string, string>(English, Russian));
