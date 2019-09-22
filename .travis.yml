@@ -2,6 +2,10 @@ dist: xenial
 sudo: false
 language: cpp
 compiler: g++
+os: linux
+compiler:
+- g++
+- clang
 
 script:
 - make
