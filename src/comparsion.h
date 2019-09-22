@@ -1,7 +1,11 @@
 #ifndef COMPARSION_H
 #define COMPARSION_H
+#include <cstring>
+#include <fstream>
 
-void input_translate();
-void input_words_eng();
+using namespace std;
+
+void input_translate(ifstream& Translate, ifstream& Wordbook);
+void input_words_eng(ifstream& Translate, ifstream& Wordbook);
 
 #endif

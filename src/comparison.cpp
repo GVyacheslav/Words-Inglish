@@ -4,14 +4,11 @@
 
 using namespace std;
 
-void input_words_eng() {
-
+void input_words_eng(ifstream& Translate, ifstream& Words) {
   string Input, Tempstr, Temps;
   int Result;
-  ifstream Translate("translate");
-  ifstream Wordbook("words");
 
-  while (getline(Translate, Tempstr) && getline(Wordbook, Temps)) {
+  while (getline(Translate, Tempstr) && getline(Words, Temps)) {
     cout << Tempstr << "-";
     cin >> Input;
 
@@ -25,14 +22,11 @@ void input_words_eng() {
   }
 }
 
-void input_translate() {
-
+void input_translate(ifstream& Translate, ifstream& Words) {
   string Tempstr, Input, Temps;
   int Result;
-  ifstream Wordbook("words");
-  ifstream Translate("translate");
 
-  while (getline(Translate, Tempstr) && getline(Wordbook, Temps)) {
+  while (getline(Translate, Tempstr) && getline(Words, Temps)) {
     cout << Temps << "-";
     cin >> Input;
     Result = Tempstr.compare(Input);

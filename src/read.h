@@ -1,6 +1,11 @@
 #ifndef READ_H
 #define READ_H
+#include <cstring>
+#include <fstream>
 
-int check_read();
+using namespace std;
+
+int check_read(ifstream& Translate, ifstream& Words);
+// int Open_file(ifstream &File, string path);
 
 #endif
