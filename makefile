@@ -1,4 +1,4 @@
-FlagWW = g++ -Wall -Werror
+FlagWW = g++ -Wall -Werror=c++11-compat
 Target = output
 Create = mkdir -p build/src
 
