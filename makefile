@@ -1,9 +1,13 @@
 FlagWW = g++ -Wall -Werror
 Target = output
+Create = mkdir build/src
 
 all:bin/Dictionary
 
-bin/Dictionary: build/src/main.o build/src/read.o build/src/comparison.o build/src/dictionary.o build/src/menu.o
+folder: 
+	$(Create)
+
+bin/Dictionary: folder build/src/main.o build/src/read.o build/src/comparison.o build/src/dictionary.o build/src/menu.o
 	$(FlagWW) build/src/main.o build/src/read.o build/src/comparison.o build/src/dictionary.o build/src/menu.o -o bin/Dictionary
 
 build/src/main.o: src/main.cpp
