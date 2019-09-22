@@ -1,10 +1,10 @@
 FlagWW = g++ -Wall -Werror
 Target = output
 
-all:bin/WordsEng
+all:bin/Dictionary
 
-bin/WordsEng: build/src/main.o build/src/read.o build/src/comparison.o
-	$(FlagWW) build/src/main.o build/src/read.o build/src/comparison.o -o bin/WordsEng
+bin/Dictionary: build/src/main.o build/src/read.o build/src/comparison.o build/src/dictionary.o build/src/menu.o
+	$(FlagWW) build/src/main.o build/src/read.o build/src/comparison.o build/src/dictionary.o build/src/menu.o -o bin/Dictionary
 
 build/src/main.o: src/main.cpp
 	$(FlagWW) -c src/main.cpp -o build/src/main.o
@@ -14,6 +14,12 @@ build/src/read.o: src/read.cpp
 
 build/src/comparison.o: src/comparison.cpp
 	$(FlagWW) -c src/comparison.cpp -o build/src/comparison.o
+
+build/src/menu.o: src/menu.cpp
+	$(FlagWW) -c src/menu.cpp -o build/src/menu.o
+
+build/src/dictionary.o: src/dictionary.cpp
+	$(FlagWW) -c src/dictionary.cpp -o build/src/dictionary.o
 
 .PHONY: clean
 
