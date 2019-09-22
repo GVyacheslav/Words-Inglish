@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int input_words_eng() {
+void input_words_eng() {
 
   string Input, Tempstr, Temps;
   int Result;
@@ -23,10 +23,9 @@ int input_words_eng() {
       cout << "Не правильно\n";
     }
   }
-  return 0;
 }
 
-int input_translate() {
+void input_translate() {
 
   string Tempstr, Input, Temps;
   int Result;
@@ -44,5 +43,4 @@ int input_translate() {
       cout << "Не правильно\n";
     }
   }
-  return 0;
 }

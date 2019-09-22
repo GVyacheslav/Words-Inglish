@@ -8,46 +8,57 @@
 
 using namespace std;
 
+void text_menu() {
+  cout << "Выберите действие\n";
+  cout << "1) Вывести словарь целиком\n";
+  cout << "2) Упражнение для запоминания на английском языке\n";
+  cout << "3) Упражнение для запоминания на русском языке\n";
+}
+
 void menu() {
-  int step = 0;
-  while (true) {
+  int step = 0, temp = 0;
 
-    cout << "Выберите действие\n";
-    cout << "1) Вывести словарь целиком\n";
-    cout << "2) Упражнение для запоминания на английском языке\n";
-    cout << "3) Упражнение для запоминания на русском языке\n";
-    cin >> step;
+  if (check_read() == true) {
+    while (true) {
+      text_menu();
 
-    switch (step) {
+      do {
+        temp = scanf("%d", &step);
+        while (getchar() != '\n')
+          ;
+        if (temp != 1 || temp != 2 || temp != 3) {
+          cout << "Некорректный ввод данных!\n";
+        }
+      } while (temp != 1 && temp != 2 && temp != 3);
 
-    case 1:
       system("clear");
-      if (check_read() == true) {
+      text_menu();
+
+      switch (step) {
+
+      case 1:
+        system("clear");
         Dictionary();
-      } else {
-        cout << "Ошибка! Файл не найден!";
-      }
-      break;
+        break;
+        system("clear");
 
-    case 2:
-      system("clear");
-      if (check_read() == true) {
-        cout << "Введите перевод с русского на английский язык" << endl;
+      case 2:
+        system("clear");
+        cout << "Введите перевод с русского на английский язык\n" << endl;
         input_words_eng();
-      } else {
-        cout << "Ошибка! Файл не найден!";
-      }
-      break;
+        break;
+        system("clear");
 
-    case 3:
-      system("clear");
-      if (check_read() == true) {
-        cout << "Введите перевод с английского на русский язык" << endl;
+      case 3:
+        system("clear");
+        cout << "Введите перевод с английского на русский язык\n" << endl;
         input_translate();
-      } else {
-        cout << "Ошибка! Файл не найден!";
+        break;
+        system("clear");
       }
-      break;
     }
+  } else {
+    cout << "Ошибка! Файл не найден!\n"
+         << "Проверьте целостность файлов words и translate!\n";
   }
 }

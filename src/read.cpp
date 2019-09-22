@@ -11,8 +11,9 @@ bool check_read() {
   ifstream Translate("translate");
   ifstream Wordbook("words");
 
-  if (!Wordbook && !Translate)
-    cout << "Ошибка! Файл не найден";
-
-  return true;
+  if (!Wordbook && !Translate) {
+    return false;
+  } else {
+    return true;
+  }
 }
