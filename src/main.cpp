@@ -1,5 +1,4 @@
 #include "comparsion.h"
-#include "dictionary.h"
 #include "menu.h"
 #include "read.h"
 #include <cstring>
