@@ -16,8 +16,7 @@ using namespace std;
   }
 }*/
 
-bool check_read(ifstream &Translate, ifstream &Words) {
-
+bool check_read(ifstream& Translate, ifstream& Words) {
   if (!Words || !Translate) {
     return false;
   } else {

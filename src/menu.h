@@ -4,6 +4,6 @@
 
 using namespace std;
 
-void menu(ifstream &Translate, ifstream &Words);
+void menu(ifstream& Translate, ifstream& Words);
 
 #endif

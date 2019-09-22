@@ -4,8 +4,7 @@
 
 using namespace std;
 
-void input_words_eng(ifstream &Translate, ifstream &Words) {
-
+void input_words_eng(ifstream& Translate, ifstream& Words) {
   string Input, Tempstr, Temps;
   int Result;
 
@@ -23,8 +22,7 @@ void input_words_eng(ifstream &Translate, ifstream &Words) {
   }
 }
 
-void input_translate(ifstream &Translate, ifstream &Words) {
-
+void input_translate(ifstream& Translate, ifstream& Words) {
   string Tempstr, Input, Temps;
   int Result;
 

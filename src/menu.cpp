@@ -15,7 +15,7 @@ void text_menu() {
   cout << "2) Упражнение для запоминания на русском языке\n";
 }
 
-void menu(ifstream &Translate, ifstream &Words) {
+void menu(ifstream& Translate, ifstream& Words) {
   int step = 0, temp = 0;
 
   if (check_read(Translate, Words) == true) {
@@ -35,7 +35,6 @@ void menu(ifstream &Translate, ifstream &Words) {
       text_menu();
 
       switch (step) {
-
       case 1:
         system("clear");
         cout << "Введите перевод с русского на английский язык\n" << endl;
