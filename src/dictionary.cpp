@@ -20,7 +20,7 @@ void Dictionary() {
   while (getline(Eng, English) && getline(Rus, Russian))
     size.insert(pair<string, string>(English, Russian));
 
-  for (int it = size.begin(), end = size.end(); it != end; ++it)
+  for (auto it = size.begin(), end = size.end(); it != end; ++it)
     cout << it->first << "-" << it->second << endl;
   cout << endl;
 }
