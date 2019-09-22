@@ -1,9 +1,10 @@
 #include "read.h"
 #include <cstdlib>
+#include <cstring>
 #include <fstream>
 #include <iostream>
 #include <map>
-#include <cstring>
+
 #include <utility>
 
 using namespace std;

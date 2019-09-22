@@ -1,12 +1,12 @@
 #include "comparsion.h"
 #include <cstdlib>
+#include <cstring>
 #include <fstream>
 #include <iostream>
-#include <cstring>
 
 using namespace std;
 
-int Open_file(ifstream &File, string path) {
+/*int Open_file(ifstream &File, string path) {
 
   File.open(path);
   if (File.fail() == 1) {
@@ -14,7 +14,7 @@ int Open_file(ifstream &File, string path) {
   } else {
     return 1;
   }
-}
+}*/
 
 bool check_read(ifstream &Translate, ifstream &Words) {
 
