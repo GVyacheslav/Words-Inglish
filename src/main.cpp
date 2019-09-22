@@ -4,7 +4,7 @@
 #include "read.h"
 #include <fstream>
 #include <iostream>
-#include <string>
+#include <stdlib.h>
 
 using namespace std;
 

@@ -5,6 +5,7 @@
 #include <fstream>
 #include <iostream>
 #include <map>
+#include <stdlib.h>
 
 using namespace std;
 
