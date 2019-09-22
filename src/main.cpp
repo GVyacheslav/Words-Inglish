@@ -2,6 +2,7 @@
 #include "dictionary.h"
 #include "menu.h"
 #include "read.h"
+#include <cstring>
 #include <fstream>
 #include <iostream>
 #include <stdlib.h>

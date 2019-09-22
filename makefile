@@ -1,6 +1,6 @@
 FlagWW = g++ -Wall -Werror
 Target = output
-Create = mkdir build/src
+Create = mkdir -p build/src
 
 all:bin/Dictionary
 

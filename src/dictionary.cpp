@@ -3,7 +3,7 @@
 #include <fstream>
 #include <iostream>
 #include <map>
-#include <string>
+#include <cstring>
 #include <utility>
 
 using namespace std;

@@ -1,7 +1,7 @@
 #ifndef READ_H
 #define READ_H
+#include <cstring>
 #include <fstream>
-#include <string>
 
 using namespace std;
 

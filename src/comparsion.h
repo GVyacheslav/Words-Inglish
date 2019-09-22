@@ -1,7 +1,7 @@
 #ifndef COMPARSION_H
 #define COMPARSION_H
+#include <cstring>
 #include <fstream>
-#include <string>
 
 using namespace std;
 
