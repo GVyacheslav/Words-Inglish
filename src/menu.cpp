@@ -46,9 +46,11 @@ void menu(ifstream& Translate, ifstream& Words) {
         input_words_eng();
         break;
         system("clear");
+      case 2:
         cout << "Введите перевод с английского на русский язык\n" << endl;
         input_translate();
         break;
+        system("clear");
 
       case 3:
         exit(1);

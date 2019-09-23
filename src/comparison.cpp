@@ -33,9 +33,10 @@ void input_translate() {
   int Result;
   ifstream Translate("../bin/translate");
   ifstream Words("../bin/words");
-  input_str(Input);
+
   while (getline(Translate, Tempstr) && getline(Words, Temps)) {
     cout << Temps << "-";
+    input_str(Input);
     transform(Input.begin(), Input.end(), Input.begin(), ::tolower);
     Result = Tempstr.compare(Input);
     if (Result == 0) {
