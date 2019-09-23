@@ -12,7 +12,8 @@ void input_str(string& Input) {
 void input_words_eng() {
   string Input, Tempstr, Temps;
   int Result;
-  Open_file(Translate, Words);
+  ifstream Translate("../bin/translate");
+  ifstream Words("../bin/words");
   while (getline(Translate, Tempstr) && getline(Words, Temps)) {
     cout << Tempstr << "-";
     input_str(Input);
@@ -30,7 +31,8 @@ void input_words_eng() {
 void input_translate() {
   string Tempstr, Input, Temps;
   int Result;
-  Open_file(Translate, Words);
+  ifstream Translate("../bin/translate");
+  ifstream Words("../bin/words");
   input_str(Input);
   while (getline(Translate, Tempstr) && getline(Words, Temps)) {
     cout << Temps << "-";

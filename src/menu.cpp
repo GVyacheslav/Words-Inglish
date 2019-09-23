@@ -28,8 +28,7 @@ void check_input_data(int& step, int& temp) {
 }
 
 void menu(ifstream& Translate, ifstream& Words) {
-  int step = 0, temp = 0, Result;
-  string Input, Tempstr, Temps;
+  int step = 0, temp = 0;
 
   if (check_read(Translate, Words) == true) {
     while (true) {
@@ -44,11 +43,11 @@ void menu(ifstream& Translate, ifstream& Words) {
       case 1:
         system("clear");
         cout << "Введите перевод с русского на английский язык\n" << endl;
-
-        input_words_eng(Result, Input, Tempstr, Temps, Translate, Words);
+        input_words_eng();
+        break;
         system("clear");
         cout << "Введите перевод с английского на русский язык\n" << endl;
-        input_translate(Result, Input, Tempstr, Temps, Translate, Words);
+        input_translate();
         break;
 
       case 3:
