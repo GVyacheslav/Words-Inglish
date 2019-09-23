@@ -8,6 +8,6 @@ TEST_CASE("Test1") {
   ifstream Translate("../bin/translate");
   ifstream Words("../bin/words");
 
-  REQUIRE(check_read(Translate, Words) == true);
-  REQUIRE_FALSE(check_read(Translate, Words) == false);
+  REQUIRE(check_read() == true);
+  REQUIRE_FALSE(check_read() == false);
 }
