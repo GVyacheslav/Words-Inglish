@@ -1,15 +1,9 @@
+language: c++
+compiler: g++
 dist: xenial
-sudo: false
-language: cpp
-os: linux
-addons:
-apt:
-sources:
-- ubuntu-toolchain-r-test
-packages:
-- g++-7
 
 script:
-- make
-- make test & ./bin/./Test
-- git ls-files src/ | xargs clang-format -i && git diff --exit-code
+  - make
+  - git ls-files src/ | xargs clang-format -i && git diff --exit-code
+  - make test
+  - ./bin/Test
