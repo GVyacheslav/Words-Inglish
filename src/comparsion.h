@@ -5,8 +5,8 @@
 
 using namespace std;
 
-void input_translate(ifstream& Translate, ifstream& Wordbook);
-void input_words_eng(ifstream& Translate, ifstream& Wordbook);
-void input_str(string& Input);
+void input_data(string& Input);
+void input_translate();
+int input_words_eng();
 
 #endif
