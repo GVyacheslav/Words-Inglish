@@ -11,3 +11,14 @@ TEST_CASE("Test1") {
   REQUIRE(check_read() == true);
   REQUIRE_FALSE(check_read() == false);
 }
+
+TEST_CASE("Test2") {
+  ifstream Open;
+  ifstream Temp;
+
+  REQUIRE(Open_file(Temp, "......") == 0);
+  REQUIRE(Open_file(Temp, "../bin/words") == 1);
+
+  REQUIRE(Open_file(Open, "......") == 0);
+  REQUIRE(Open_file(Open, "../bin/translate") == 1);
+}
