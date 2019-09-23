@@ -30,7 +30,7 @@ void check_input_data(int& step, int& temp) {
 void menu(ifstream& Translate, ifstream& Words) {
   int step = 0, temp = 0;
 
-  if (check_read(Translate, Words) == true) {
+  if (check_read() == true) {
     while (true) {
       text_menu();
 
