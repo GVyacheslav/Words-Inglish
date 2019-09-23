@@ -30,13 +30,13 @@ build/src/menu.o: src/menu.cpp
 test:bin/test
 
 bin/test: foldertest build/test/test.o build/test/read.o
-	$(FlagWW) build/test/test.o build/test/read.o -o bin/Test
+	g++ build/test/test.o build/test/read.o -o bin/Test -Wall -Werror -std=c++11
 
 build/test/test.o: test/test.cpp
-	g++ -Wall -Werror -c test/test.cpp -o build/test/test.o
+	g++ -Wall -Werror -c test/test.cpp -o build/test/test.o -Wall -Werror -std=c++11
 
 build/test/read.o: src/read.cpp
-	g++ -Wall -Werror  -c src/read.cpp -o build/test/read.o
+	g++ -Wall -Werror  -c src/read.cpp -o build/test/read.o -Wall -Werror -std=c++11
 
 .PHONY: clean
 
