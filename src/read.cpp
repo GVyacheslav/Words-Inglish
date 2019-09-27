@@ -14,13 +14,3 @@ int Open_file(ifstream& File, string path) {
     return 1;
   }
 }
-
-bool check_read() {
-  ifstream Translate("../bin/translate");
-  ifstream Words("../bin/words");
-  if (!Words || !Translate) {
-    return false;
-  } else {
-    return true;
-  }
-}

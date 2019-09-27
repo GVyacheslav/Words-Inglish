@@ -4,21 +4,15 @@
 #include "../src/read.h"
 #include "../thirdparty/single_include/catch2/catch.hpp"
 
-TEST_CASE("Test1") {
-  ifstream Translate("../bin/translate");
-  ifstream Words("../bin/words");
-
-  REQUIRE(check_read() == true);
-  REQUIRE_FALSE(check_read() == false);
-}
-
 TEST_CASE("Test2") {
-  ifstream Open;
-  ifstream Temp;
+  ifstream Translate;
+  ifstream Words;
 
-  REQUIRE(Open_file(Temp, "......") == 0);
-  REQUIRE(Open_file(Temp, "../bin/words") == 1);
+  REQUIRE(Open_file(Translate, "......") == 0);
 
-  REQUIRE(Open_file(Open, "......") == 0);
-  REQUIRE(Open_file(Open, "../bin/translate") == 1);
+  REQUIRE(Open_file(Translate, "translate") == 1);
+
+  REQUIRE(Open_file(Words, "words") == 1);
+
+  REQUIRE(Open_file(Words, "....") == 0);
 }

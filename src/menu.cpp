@@ -29,30 +29,39 @@ void check_input_data(int& step, int& temp) {
 
 void menu(ifstream& Translate, ifstream& Words) {
   int step = 0, temp = 0;
+  string Input;
 
-  if (check_read() == true) {
+  if (Open_file(Translate, "../bin/translate") == 1
+      && Open_file(Words, "../bin/words") == 1) {
     while (true) {
       text_menu();
 
       check_input_data(step, temp);
 
       system("clear");
+
       text_menu();
 
       switch (step) {
       case 1:
+
         system("clear");
         cout << "Введите перевод с русского на английский язык\n" << endl;
-        input_words_eng();
+        input_words_eng(Translate, Words);
         break;
+
         system("clear");
+
       case 2:
+
         cout << "Введите перевод с английского на русский язык\n" << endl;
-        input_translate();
+        input_translate(Translate, Words);
         break;
+
         system("clear");
 
       case 3:
+
         exit(1);
         system("clear");
       }
