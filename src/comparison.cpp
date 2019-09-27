@@ -9,11 +9,10 @@ void input_str(string& Input) {
   cin >> Input;
 }
 
-void input_words_eng() {
+void input_words_eng(ifstream& Translate, ifstream& Words) {
   string Input, Tempstr, Temps;
   int Result;
-  ifstream Translate("../bin/translate");
-  ifstream Words("../bin/words");
+
   while (getline(Translate, Tempstr) && getline(Words, Temps)) {
     cout << Tempstr << "-";
     input_str(Input);
@@ -28,11 +27,9 @@ void input_words_eng() {
   }
 }
 
-void input_translate() {
+void input_translate(ifstream& Translate, ifstream& Words) {
   string Tempstr, Input, Temps;
   int Result;
-  ifstream Translate("../bin/translate");
-  ifstream Words("../bin/words");
 
   while (getline(Translate, Tempstr) && getline(Words, Temps)) {
     cout << Temps << "-";

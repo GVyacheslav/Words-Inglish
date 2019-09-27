@@ -6,7 +6,7 @@
 using namespace std;
 
 void input_data(string& Input);
-void input_translate();
-int input_words_eng();
+void input_translate(ifstream& Translate, ifstream& Words);
+void input_words_eng(ifstream& Translate, ifstream& Words);
 
 #endif

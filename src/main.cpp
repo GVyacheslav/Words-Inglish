@@ -9,8 +9,10 @@
 using namespace std;
 
 int main() {
-  ifstream Translate("../bin/translate");
-  ifstream Words("../bin/words");
+  ifstream Translate;
+  ifstream Words;
+  Open_file(Translate, "../bin/translate");
+  Open_file(Words, "../bin/words");
   setlocale(0, "");
   system("clear");
   menu(Translate, Words);
