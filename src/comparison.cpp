@@ -5,42 +5,68 @@
 
 using namespace std;
 
-void input_str(string& Input) {
-  cin >> Input;
-}
-
-void input_words_eng(ifstream& Translate, ifstream& Words) {
-  string Input, Tempstr, Temps;
-  int Result;
-
-  while (getline(Translate, Tempstr) && getline(Words, Temps)) {
-    cout << Tempstr << "-";
-    input_str(Input);
-    transform(Input.begin(), Input.end(), Input.begin(), ::tolower);
-    Result = Temps.compare(Input);
-    if (Result == 0) {
-      cout << "Верно\n";
-
-    } else {
-      cout << "Не правильно\n";
-    }
+int check_translate(
+        string& Input,
+        string& Temps,
+        ifstream& Translate,
+        ifstream& Words,
+        string& Tempstr,
+        int& Result) {
+  transform(Input.begin(), Input.end(), Input.begin(), ::tolower);
+  Result = Temps.compare(Input);
+  if (Result == 0) {
+    return 0;
+  } else {
+    return 1;
   }
 }
 
-void input_translate(ifstream& Translate, ifstream& Words) {
-  string Tempstr, Input, Temps;
-  int Result;
+void input_words_eng(
+        string& Input,
+        string& Temps,
+        ifstream& Translate,
+        ifstream& Words,
+        string& Tempstr,
+        int& Result) {
+  cout << Tempstr << "-";
+  cin >> Input;
+  check_translate(Input, Temps, Translate, Words, Tempstr, Result);
+  if (Result == 0) {
+    cout << "Верно\n";
+  } else {
+    cout << "Не правильно\n";
+  }
+}
 
-  while (getline(Translate, Tempstr) && getline(Words, Temps)) {
-    cout << Temps << "-";
-    input_str(Input);
-    transform(Input.begin(), Input.end(), Input.begin(), ::tolower);
-    Result = Tempstr.compare(Input);
-    if (Result == 0) {
-      cout << "Верно\n";
+int check_translate_ru(
+        string& Input,
+        string& Temps,
+        ifstream& Translate,
+        ifstream& Words,
+        string& Tempstr,
+        int& Result) {
+  transform(Input.begin(), Input.end(), Input.begin(), ::tolower);
+  Result = Tempstr.compare(Input);
+  if (Result == 0) {
+    return 0;
+  } else {
+    return 1;
+  }
+}
 
-    } else {
-      cout << "Не правильно\n";
-    }
+void input_words_ru(
+        string& Input,
+        string& Temps,
+        ifstream& Translate,
+        ifstream& Words,
+        string& Tempstr,
+        int& Result) {
+  cout << Temps << "-";
+  cin >> Input;
+  check_translate_ru(Input, Temps, Translate, Words, Tempstr, Result);
+  if (Result == 0) {
+    cout << "Верно\n";
+  } else {
+    cout << "Не правильно\n";
   }
 }
