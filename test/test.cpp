@@ -40,7 +40,7 @@ TEST_CASE("check_translate") {
   string Input3 = "clever";
   string Temps3 = "CLEVER";
   check_translate(Input3, Temps3, Translate, Words, Tempstr, Result);
-  REQUIRE(Result == -1);
+  REQUIRE(Result < 0);
 
   string Input4 = "ABANDONED";
   string Temps4 = "above";
