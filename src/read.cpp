@@ -1,4 +1,3 @@
-#include "comparsion.h"
 #include <cstdlib>
 #include <cstring>
 #include <fstream>
