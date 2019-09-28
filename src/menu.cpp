@@ -31,47 +31,41 @@ void menu(ifstream& Translate, ifstream& Words) {
   int step = 0, temp = 0, Result;
   string Input, Temps, Tempstr;
 
-  if (Open_file(Translate, "../bin/translate") == 1
-      && Open_file(Words, "../bin/words") == 1) {
-    while (true) {
-      text_menu();
+  while (true) {
+    text_menu();
 
-      check_input_data(step, temp);
+    check_input_data(step, temp);
+
+    system("clear");
+
+    text_menu();
+
+    switch (step) {
+    case 1:
+
+      system("clear");
+      cout << "Введите перевод с русского на английский язык\n" << endl;
+      while (getline(Translate, Tempstr) && getline(Words, Temps)) {
+        input_words_eng(Input, Temps, Translate, Words, Tempstr, Result);
+      }
+      break;
 
       system("clear");
 
-      text_menu();
+    case 2:
 
-      switch (step) {
-      case 1:
-
-        system("clear");
-        cout << "Введите перевод с русского на английский язык\n" << endl;
-        while (getline(Translate, Tempstr) && getline(Words, Temps)) {
-          input_words_eng(Input, Temps, Translate, Words, Tempstr, Result);
-        }
-        break;
-
-        system("clear");
-
-      case 2:
-
-        cout << "Введите перевод с английского на русский язык\n" << endl;
-        while (getline(Translate, Tempstr) && getline(Words, Temps)) {
-          input_words_ru(Input, Temps, Translate, Words, Tempstr, Result);
-        }
-        break;
-
-        system("clear");
-
-      case 3:
-
-        exit(1);
-        system("clear");
+      cout << "Введите перевод с английского на русский язык\n" << endl;
+      while (getline(Translate, Tempstr) && getline(Words, Temps)) {
+        input_words_ru(Input, Temps, Translate, Words, Tempstr, Result);
       }
+      break;
+
+      system("clear");
+
+    case 3:
+
+      exit(1);
+      system("clear");
     }
-  } else {
-    cout << "Ошибка! Файл не найден!\n"
-         << "Проверьте целостность файлов words и translate!\n";
   }
 }
