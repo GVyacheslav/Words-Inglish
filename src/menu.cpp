@@ -28,8 +28,8 @@ void check_input_data(int& step, int& temp) {
 }
 
 void menu(ifstream& Translate, ifstream& Words) {
-  int step = 0, temp = 0;
-  string Input;
+  int step = 0, temp = 0, Result;
+  string Input, Temps, Tempstr;
 
   if (Open_file(Translate, "../bin/translate") == 1
       && Open_file(Words, "../bin/words") == 1) {
@@ -47,7 +47,9 @@ void menu(ifstream& Translate, ifstream& Words) {
 
         system("clear");
         cout << "Введите перевод с русского на английский язык\n" << endl;
-        input_words_eng(Translate, Words);
+        while (getline(Translate, Tempstr) && getline(Words, Temps)) {
+          input_words_eng(Input, Temps, Translate, Words, Tempstr, Result);
+        }
         break;
 
         system("clear");
@@ -55,7 +57,9 @@ void menu(ifstream& Translate, ifstream& Words) {
       case 2:
 
         cout << "Введите перевод с английского на русский язык\n" << endl;
-        input_translate(Translate, Words);
+        while (getline(Translate, Tempstr) && getline(Words, Temps)) {
+          input_words_ru(Input, Temps, Translate, Words, Tempstr, Result);
+        }
         break;
 
         system("clear");
