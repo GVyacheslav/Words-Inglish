@@ -30,6 +30,9 @@ void input_words_eng(
         int& Result) {
   cout << Tempstr << "-";
   cin >> Input;
+  if (Input == "#") {
+    return;
+  }
   check_translate(Input, Temps, Translate, Words, Tempstr, Result);
   if (Result == 0) {
     cout << "Верно\n";
@@ -63,6 +66,9 @@ void input_words_ru(
         int& Result) {
   cout << Temps << "-";
   cin >> Input;
+  if (Input == "#") {
+    return;
+  };
   check_translate_ru(Input, Temps, Translate, Words, Tempstr, Result);
   if (Result == 0) {
     cout << "Верно\n";
