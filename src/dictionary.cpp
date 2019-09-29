@@ -18,4 +18,6 @@ void Print_dictionary(
   for (auto it = size.begin(), end = size.end(); it != end; ++it)
     cout << it->first << "-" << it->second << endl;
   cout << endl;
+  Translate.close();
+  Words.close();
 }
