@@ -18,15 +18,17 @@ void text_menu() {
   cout << "4) Выход из программы\n";
 }
 
-void check_input_data(int& step, int& temp) {
+int check_input_data(int& step) {
+  int temp;
   do {
     temp = scanf("%d", &step);
     while (getchar() != '\n')
       ;
     if (temp != 1 || temp != 2 || temp != 3) {
-      cout << "Некорректный ввод данных!\n";
+      return 0;
     }
   } while (temp != 1 && temp != 2 && temp != 3);
+  return 1;
 }
 
 void menu(ifstream& Translate, ifstream& Words) {
@@ -48,6 +50,7 @@ void menu(ifstream& Translate, ifstream& Words) {
 
       system("clear");
       cout << "Введите перевод с русского на английский язык\n" << endl;
+
       while (getline(Translate, Tempstr) && getline(Words, Temps)) {
         input_words_eng(Input, Temps, Translate, Words, Tempstr, Result);
       }
@@ -78,5 +81,9 @@ void menu(ifstream& Translate, ifstream& Words) {
 
       system("clear");
     }
+    Translate.close();
+    Words.close();
+    Open_file(Translate, "../bin/translate");
+    Open_file(Words, "../bin/words");
   }
 }
