@@ -5,8 +5,38 @@
 
 using namespace std;
 
-void input_data(string& Input);
-void input_translate();
-int input_words_eng();
+int Open_file(ifstream& File, string path);
+
+int check_translate(
+        string& Input,
+        string& Temps,
+        ifstream& Translate,
+        ifstream& Words,
+        string& Tempstr,
+        int& Result);
+
+void input_words_eng(
+        string& Input,
+        string& Temps,
+        ifstream& Translate,
+        ifstream& Words,
+        string& Tempstr,
+        int& Result);
+
+int check_translate_ru(
+        string& Input,
+        string& Temps,
+        ifstream& Translate,
+        ifstream& Words,
+        string& Tempstr,
+        int& Result);
+
+void input_words_ru(
+        string& Input,
+        string& Temps,
+        ifstream& Translate,
+        ifstream& Words,
+        string& Tempstr,
+        int& Result);
 
 #endif

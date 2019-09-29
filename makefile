@@ -29,14 +29,17 @@ build/src/menu.o: src/menu.cpp
 
 test:bin/test
 
-bin/test: foldertest build/test/test.o build/test/read.o
-	g++ build/test/test.o build/test/read.o -o bin/Test -Wall -Werror -std=c++11
+bin/test: foldertest build/test/test.o build/test/read.o build/test/comparison.o
+	g++ build/test/test.o build/test/read.o build/test/comparison.o -o bin/Test -Wall -Werror -std=c++11
 
 build/test/test.o: test/test.cpp
 	g++ -Wall -Werror -c test/test.cpp -o build/test/test.o -Wall -Werror -std=c++11
 
 build/test/read.o: src/read.cpp
 	g++ -Wall -Werror  -c src/read.cpp -o build/test/read.o -Wall -Werror -std=c++11
+
+build/test/comparison.o: src/comparison.cpp
+	g++ -Wall -Werror  -c src/comparison.cpp -o build/test/comparison.o -Wall -Werror -std=c++11
 
 .PHONY: clean
 
