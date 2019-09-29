@@ -1,4 +1,5 @@
 #include "comparsion.h"
+#include "dictionary.h"
 #include "read.h"
 #include <cstdlib>
 #include <cstring>
@@ -13,7 +14,8 @@ void text_menu() {
   cout << "Выберите действие\n";
   cout << "1) Упражнение для запоминания на английском языке\n";
   cout << "2) Упражнение для запоминания на русском языке\n";
-  cout << "3) Выход из программы\n";
+  cout << "3) Словарь\n";
+  cout << "4) Выход из программы\n";
 }
 
 void check_input_data(int& step, int& temp) {
@@ -30,6 +32,7 @@ void check_input_data(int& step, int& temp) {
 void menu(ifstream& Translate, ifstream& Words) {
   int step = 0, temp = 0, Result;
   string Input, Temps, Tempstr;
+  map<string, string> size;
 
   while (true) {
     text_menu();
@@ -64,7 +67,15 @@ void menu(ifstream& Translate, ifstream& Words) {
 
     case 3:
 
+      Print_dictionary(size, Translate, Words);
+
+      break;
+
+      system("clear");
+
+    case 4:
       exit(1);
+
       system("clear");
     }
   }
