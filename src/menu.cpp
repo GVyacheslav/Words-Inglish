@@ -19,27 +19,26 @@ void text_menu() {
 }
 
 int check_input_data(int& step) {
-  int temp;
   do {
-    temp = scanf("%d", &step);
+    cin >> step;
     while (getchar() != '\n')
       ;
-    if (temp != 1 || temp != 2 || temp != 3) {
+    if (step != 1 || step != 2 || step != 3) {
       return 0;
     }
-  } while (temp != 1 && temp != 2 && temp != 3);
+  } while (step != 1 && step != 2 && step != 3);
   return 1;
 }
 
 void menu(ifstream& Translate, ifstream& Words) {
-  int step = 0, temp = 0, Result;
+  int step = 0, Result;
   string Input, Temps, Tempstr;
   map<string, string> size;
 
   while (true) {
     text_menu();
 
-    check_input_data(step, temp);
+    check_input_data(step);
 
     system("clear");
 
