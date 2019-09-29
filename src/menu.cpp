@@ -1,4 +1,5 @@
 #include "comparsion.h"
+#include "dictionary.h"
 #include "read.h"
 #include <cstdlib>
 #include <cstring>
@@ -13,28 +14,31 @@ void text_menu() {
   cout << "Выберите действие\n";
   cout << "1) Упражнение для запоминания на английском языке\n";
   cout << "2) Упражнение для запоминания на русском языке\n";
-  cout << "3) Выход из программы\n";
+  cout << "3) Словарь\n";
+  cout << "4) Выход из программы\n";
 }
 
-void check_input_data(int& step, int& temp) {
+int check_input_data(int& step) {
   do {
-    temp = scanf("%d", &step);
+    cin >> step;
     while (getchar() != '\n')
       ;
-    if (temp != 1 || temp != 2 || temp != 3) {
-      cout << "Некорректный ввод данных!\n";
+    if (step != 1 || step != 2 || step != 3) {
+      return 0;
     }
-  } while (temp != 1 && temp != 2 && temp != 3);
+  } while (step != 1 && step != 2 && step != 3);
+  return 1;
 }
 
 void menu(ifstream& Translate, ifstream& Words) {
-  int step = 0, temp = 0, Result;
+  int step = 0, Result;
   string Input, Temps, Tempstr;
+  map<string, string> size;
 
   while (true) {
     text_menu();
 
-    check_input_data(step, temp);
+    check_input_data(step);
 
     system("clear");
 
@@ -45,6 +49,7 @@ void menu(ifstream& Translate, ifstream& Words) {
 
       system("clear");
       cout << "Введите перевод с русского на английский язык\n" << endl;
+
       while (getline(Translate, Tempstr) && getline(Words, Temps)) {
         input_words_eng(Input, Temps, Translate, Words, Tempstr, Result);
       }
@@ -64,8 +69,20 @@ void menu(ifstream& Translate, ifstream& Words) {
 
     case 3:
 
+      Print_dictionary(size, Translate, Words);
+
+      break;
+
+      system("clear");
+
+    case 4:
       exit(1);
+
       system("clear");
     }
+    Translate.close();
+    Words.close();
+    Open_file(Translate, "../bin/translate");
+    Open_file(Words, "../bin/words");
   }
 }

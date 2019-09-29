@@ -3,6 +3,10 @@
 #include <fstream>
 #include <iostream>
 
+#define KNRM "\x1B[0m"   // Белый цвет
+#define KRED "\x1B[31m"  // Красный цвет
+#define GREEN "\x1B[32m" // Белый цвет
+
 using namespace std;
 
 int check_translate(
@@ -30,11 +34,14 @@ void input_words_eng(
         int& Result) {
   cout << Tempstr << "-";
   cin >> Input;
+  if (Input == "#") {
+    return;
+  }
   check_translate(Input, Temps, Translate, Words, Tempstr, Result);
   if (Result == 0) {
-    cout << "Верно\n";
+    cout << GREEN "Верно\n" << KNRM;
   } else {
-    cout << "Не правильно\n";
+    cout << KRED "Не правильно\n" << KNRM;
   }
 }
 
@@ -63,10 +70,13 @@ void input_words_ru(
         int& Result) {
   cout << Temps << "-";
   cin >> Input;
+  if (Input == "#") {
+    return;
+  }
   check_translate_ru(Input, Temps, Translate, Words, Tempstr, Result);
   if (Result == 0) {
-    cout << "Верно\n";
+    cout << GREEN "Верно\n" << KNRM;
   } else {
-    cout << "Не правильно\n";
+    cout << KRED "Не правильно\n" << KNRM;
   }
 }
