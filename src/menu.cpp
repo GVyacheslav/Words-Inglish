@@ -62,7 +62,8 @@ void menu(ifstream& Translate, ifstream& Words) {
 
     case 2:
 
-      cout << "Введите перевод с английского на русский язык\n(Для выхода "
+      cout << "Введите перевод с английского на русский язык. Вводить следует "
+              "слова через нижний регистр (прописными буквами)!\n(Для выхода "
               "нажмите #)\n"
            << endl;
       while (getline(Translate, Tempstr) && getline(Words, Temps)) {
@@ -77,7 +78,7 @@ void menu(ifstream& Translate, ifstream& Words) {
     case 3:
 
       Print_dictionary(size, Translate, Words);
-      cout << "Для продолжения нажмите любую клавишу\n";
+      cout << "Для продолжения нажмите любую клавишу:" << endl;
       getchar();
 
       break;
