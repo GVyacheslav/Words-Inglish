@@ -25,7 +25,7 @@ int check_translate(
   }
 }
 
-void input_words_eng(
+int input_words_eng(
         string& Input,
         string& Temps,
         ifstream& Translate,
@@ -35,7 +35,7 @@ void input_words_eng(
   cout << Tempstr << "-";
   cin >> Input;
   if (Input == "#") {
-    return;
+    return 1;
   }
   check_translate(Input, Temps, Translate, Words, Tempstr, Result);
   if (Result == 0) {
@@ -43,6 +43,7 @@ void input_words_eng(
   } else {
     cout << KRED "Не правильно\n" << KNRM;
   }
+  return 0;
 }
 
 int check_translate_ru(
@@ -61,7 +62,7 @@ int check_translate_ru(
   }
 }
 
-void input_words_ru(
+int input_words_ru(
         string& Input,
         string& Temps,
         ifstream& Translate,
@@ -71,7 +72,7 @@ void input_words_ru(
   cout << Temps << "-";
   cin >> Input;
   if (Input == "#") {
-    return;
+    return 1;
   }
   check_translate_ru(Input, Temps, Translate, Words, Tempstr, Result);
   if (Result == 0) {
@@ -79,4 +80,5 @@ void input_words_ru(
   } else {
     cout << KRED "Не правильно\n" << KNRM;
   }
+  return 0;
 }

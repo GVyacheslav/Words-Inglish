@@ -15,7 +15,7 @@ int check_translate(
         string& Tempstr,
         int& Result);
 
-void input_words_eng(
+int input_words_eng(
         string& Input,
         string& Temps,
         ifstream& Translate,
@@ -31,7 +31,7 @@ int check_translate_ru(
         string& Tempstr,
         int& Result);
 
-void input_words_ru(
+int input_words_ru(
         string& Input,
         string& Temps,
         ifstream& Translate,

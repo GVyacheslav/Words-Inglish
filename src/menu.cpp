@@ -36,22 +36,25 @@ void menu(ifstream& Translate, ifstream& Words) {
   map<string, string> size;
 
   while (true) {
-    text_menu();
-
-    check_input_data(step);
-
     system("clear");
 
     text_menu();
+
+    check_input_data(step);
 
     switch (step) {
     case 1:
 
       system("clear");
-      cout << "Введите перевод с русского на английский язык\n" << endl;
+      cout << "Введите перевод с русского на английский язык\n(Для выхода "
+              "нажмите #)\n"
+           << endl;
 
       while (getline(Translate, Tempstr) && getline(Words, Temps)) {
-        input_words_eng(Input, Temps, Translate, Words, Tempstr, Result);
+        if (input_words_eng(Input, Temps, Translate, Words, Tempstr, Result)
+            == 1) {
+          break;
+        }
       }
       break;
 
@@ -59,9 +62,14 @@ void menu(ifstream& Translate, ifstream& Words) {
 
     case 2:
 
-      cout << "Введите перевод с английского на русский язык\n" << endl;
+      cout << "Введите перевод с английского на русский язык. Вводить следует "
+              "слова через нижний регистр (прописными буквами)!\n(Для выхода "
+              "нажмите #)\n"
+           << endl;
       while (getline(Translate, Tempstr) && getline(Words, Temps)) {
-        input_words_ru(Input, Temps, Translate, Words, Tempstr, Result);
+        if (input_words_ru(Input, Temps, Translate, Words, Tempstr, Result)
+            == 1)
+          break;
       }
       break;
 
@@ -70,6 +78,8 @@ void menu(ifstream& Translate, ifstream& Words) {
     case 3:
 
       Print_dictionary(size, Translate, Words);
+      cout << "Для продолжения нажмите любую клавишу:" << endl;
+      getchar();
 
       break;
 
