@@ -20,7 +20,7 @@ void text_menu() {
 
 int check_input_data(int& step) {
   do {
-    cin >> step;
+    scanf("%d", &step);
     while (getchar() != '\n')
       ;
     if (step != 1 || step != 2 || step != 3) {
